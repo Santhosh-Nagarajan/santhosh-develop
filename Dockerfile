@@ -1,11 +1,7 @@
-FROM ubuntu:latest
+FROM nginx:latest
 
-RUN mkdir /app/devops
+RUN rm /usr/share/nginx/html/index.html
 
-COPY . /app/devops
+COPY index.html /usr/share/nginx/html
 
-ENTRYPOINT app/index/santhosh
-
-EXPOSE 9090/tcp
-
-CMD "Santhosh"
+EXPOSE 80
